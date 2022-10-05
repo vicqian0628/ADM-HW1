@@ -103,4 +103,46 @@ for _ in range(int(input())):
 print(sum(map(int, A)))
 
 
-###
+###The Captain's Room###
+
+from collections import Counter
+group_size=int(input())
+room_list=list(map(int,input().split()))
+
+C = Counter(room_list)
+
+for i,j in C.items():
+    if j<group_size:
+        print(i)
+	
+
+###Check Subset###
+
+numberOfTest = int(input())
+for i in range(numberOfTest):
+    temp = input()
+    setA = set(map(int, input().split()))
+    temp = input()
+    setB = set(map(int, input().split()))
+    if len(setB.intersection(setA)) == len(setA):
+        print("True")
+    else:
+        print("False")
+	
+	
+###Check Strict Superset###
+
+setA = set(map(int, input().split()))
+n = int(input())
+ctr = 0
+for i in range (n):
+    tempSet = set(map(int, input().split()))
+    if(setA.issuperset(tempSet)):
+        ctr += 1
+if(ctr == n):
+    print("True")
+else:
+    print("False")
+    
+    
+
